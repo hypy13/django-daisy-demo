@@ -15,4 +15,4 @@ services:
 
 networks:
   demo_daisy:
-    driver: demo_daisy
+    driver: bridge
