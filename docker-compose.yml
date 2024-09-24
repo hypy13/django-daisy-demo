@@ -1,8 +1,8 @@
 version: '3.8'
 
 services:
-  rent_web:
-    container_name: rent_web
+  demo_daisy_web:
+    container_name: demo_daisy_web
     restart: unless-stopped
     build:
       context: .
@@ -14,5 +14,5 @@ services:
       - demo_daisy
 
 networks:
-  rent:
+  demo_daisy:
     driver: demo_daisy
