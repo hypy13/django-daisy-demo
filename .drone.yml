@@ -1,0 +1,28 @@
+kind: pipeline
+type: exec
+name: dockercompose
+
+platform:
+  os: linux
+  arch: amd64
+
+
+steps:
+  - name: "run docker compose"
+    commands:
+    - DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1 docker compose  up -d --build
+#    failure: ignore
+ 
+  - name: "copy nginx conf"
+    commands:
+    - cp -r nginx/* /docker/nginx/data/conf.d/
+
+  - name: "restart nginx server"
+    commands: 
+    - docker restart nginx
+
+trigger:
+  branch:
+  - master
+  event:
+  - push

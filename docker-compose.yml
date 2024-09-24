@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  rent_web:
+    container_name: rent_web
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "4090:8000"
+    networks:
+      - demo_daisy
+
+networks:
+  rent:
+    driver: demo_daisy
