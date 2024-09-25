@@ -115,3 +115,6 @@ def seed_all(num_entries=10, overwrite=False):
     minutes = int(elapsed_time // 60)
     seconds = int(elapsed_time % 60)
     print("Script Execution took: {} minutes {} seconds".format(minutes, seconds))
+
+
+seed_all()
