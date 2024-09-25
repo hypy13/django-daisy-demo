@@ -9,12 +9,12 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
-
 import os
+
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -30,7 +30,14 @@ ALLOWED_HOSTS = [
     'demo.hy3.ir',
     'hy3.ir',
 ]
+CSRF_TRUSTED_ORIGINS = [
+    'https://hy3.ir',
+    'https://demo.hy3.ir',
 
+    'http://demo.hy3.ir',
+    'http://hy3.ir',
+
+]
 
 # Application definition
 
@@ -86,7 +93,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pollme.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
@@ -96,7 +102,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -116,7 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -130,7 +134,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
@@ -139,8 +142,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY =  'your-client-id'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET ='your-client-secret'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'your-client-id'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'your-client-secret'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = 'your-client-id'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'your-client-secret'
 SOCIAL_AUTH_FACEBOOK_OAUTH2_KEY = 'your-client-id'
@@ -157,3 +160,15 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'TBD'
 EMAIL_HOST_PASSWORD = 'TBD'
 DEFAULT_FROM_EMAIL = 'TBD'  # The email address you want to send from
+
+APPS_REORDER = {
+    'auth': {
+        'icon': 'fa-solid fa-person-military-pointing',
+        'name': _('Authentication'),
+        'hide': False,
+        'app': 'users',
+    },
+    'social_django': {
+        'icon': 'fa-solid fa-users-gear'
+    }
+}
