@@ -13,8 +13,8 @@ services:
     networks:
       - demo_daisy
 
-    volumes:
-      - /docker/projects/django_daisy_demo/db.sqlite3:/usr/src/app/db.sqlite3
+#    volumes:
+#      - /docker/projects/django_daisy_demo/db.sqlite3:/usr/src/app/db.sqlite3
 
 networks:
   demo_daisy:
