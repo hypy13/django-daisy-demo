@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'demo.hy3.ir',
     'hy3.ir',
+    '0.0.0.0',
 ]
 CSRF_TRUSTED_ORIGINS = [
     'https://hy3.ir',
