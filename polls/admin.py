@@ -1,10 +1,13 @@
 from django.contrib import admin
+
+from django_daisy.mixins import NavTabMixin
 from .models import Poll, Choice, Vote
 
 
-class ChoiceInline(admin.TabularInline):  # or admin.StackedInline for a different layout
+class ChoiceInline(admin.TabularInline, NavTabMixin):  # or admin.StackedInline for a different layout
     model = Choice
     extra = 1
+
 
 @admin.register(Poll)
 class PollAdmin(admin.ModelAdmin):
