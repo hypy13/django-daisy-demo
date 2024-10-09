@@ -166,6 +166,8 @@ EMAIL_HOST_USER = 'TBD'
 EMAIL_HOST_PASSWORD = 'TBD'
 DEFAULT_FROM_EMAIL = 'TBD'  # The email address you want to send from
 
+DEFAULT_ADMIN_SITE_CLASS = 'pollme.dashboard.PollmeAdminDashboard'
+
 APPS_REORDER = {
     'auth': {
         'icon': 'fa-solid fa-person-military-pointing',
