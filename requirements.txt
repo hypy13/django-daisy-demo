@@ -4,4 +4,3 @@ sqlparse==0.4.4
 social-auth-app-django>=0.4.0
 #django_daisy==0.1.23
 -e git+https://github.com/hypy13/django-daisy.git#egg=django_daisy
-
