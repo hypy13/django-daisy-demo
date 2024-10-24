@@ -44,7 +44,6 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'social_django',
     'django_daisy',
     'django.contrib.admin',
     'django.contrib.admindocs',
@@ -53,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
     'polls.apps.PollsConfig',
     'accounts.apps.AccountsConfig',
 ]
