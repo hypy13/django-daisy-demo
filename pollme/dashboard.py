@@ -4,6 +4,6 @@ from django_daisy.admin import DaisyAdminSite
 
 
 class PollmeAdminDashboard(DaisyAdminSite):
-    site_title = _('Pollme')
-    site_header = _('Pollme Dashboard')
+    site_title = _('Django Daisy')
+    site_header = _('Pollme Administration')
     index_title = _('Pollme Dashboard Index Page')
