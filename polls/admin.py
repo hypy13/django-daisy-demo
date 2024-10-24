@@ -33,3 +33,4 @@ class VoteAdmin(admin.ModelAdmin):
     list_display = ["choice", "poll", "user", 'created_at']
     search_fields = ["choice__choice_text", "poll__text", "user__username"]
     autocomplete_fields = ["choice", "poll", "user"]
+    readonly_fields = ('user', 'poll', 'choice', 'created_at')

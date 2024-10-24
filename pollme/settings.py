@@ -46,7 +46,7 @@ CSRF_TRUSTED_ORIGINS = [
 INSTALLED_APPS = [
     'social_django',
     'django_daisy',
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
