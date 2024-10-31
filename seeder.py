@@ -1,3 +1,15 @@
+import os, sys
+sys.path.append(
+    '/home/hossein/Documents/porjects/django-daisy-demo/accounting'
+)
+sys.path.append(
+    '/usr/src/app'
+)
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pollme.settings')
+import django
+
+django.setup()
+
 from polls.models import Choice, Poll, Vote
 from django.contrib.auth.models import User
 import datetime
@@ -83,6 +95,9 @@ def seed_votes():
     number_of_new_votes = users.count() * polls.count()
     for poll in polls:
         choices = list(poll.choice_set.all())
+        if not choices:
+            print("no choices")
+            continue
         for user in users:
             v = Vote(
                 user=user,
