@@ -1,6 +1,6 @@
 #!/bin/sh
 # Define the database file path
-DB_FILE="db.sqlite3"
+DB_FILE="db2.sqlite3"
 
 # Check if the database file exists
 if [ -f "$DB_FILE" ]; then
