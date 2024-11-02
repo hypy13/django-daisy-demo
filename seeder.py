@@ -1,4 +1,6 @@
-import os, sys
+import os
+import sys
+
 sys.path.append(
     '/home/hossein/Documents/porjects/django-daisy-demo/accounting'
 )
@@ -16,7 +18,10 @@ import datetime
 import random
 import time
 from faker import Faker
+
 fake = Faker()
+
+print(Poll.objects.all().delete(), ' poll deleted')
 
 
 def seed_users(num_entries=10, overwrite=False):
@@ -61,7 +66,7 @@ def seed_polls(num_entries=10, choice_min=2, choice_max=5, overwrite=False):
     for _ in range(num_entries):
         p = Poll(
             owner=random.choice(users),
-            text=fake.paragraph(),
+            text=fake.paragraph(1),
             pub_date=datetime.datetime.now()
         )
         p.save()
@@ -69,7 +74,7 @@ def seed_polls(num_entries=10, choice_min=2, choice_max=5, overwrite=False):
         for _ in range(num_choices):
             c = Choice(
                 poll=p,
-                choice_text=fake.sentence()
+                choice_text=fake.sentence(15)
             ).save()
         count += 1
         percent_complete = count / num_entries * 100
