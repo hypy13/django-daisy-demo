@@ -5,3 +5,4 @@ social-auth-app-django>=0.4.0
 #django_daisy==0.1.23
 git+https://github.com/hypy13/django-daisy.git#egg=django_daisy
 
+faker==30.8.2

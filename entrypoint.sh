@@ -1,5 +1,5 @@
 #!/bin/sh
 python manage.py migrate
 
-python manage.py seeder.py
+python seeder.py
 exec "$@"
