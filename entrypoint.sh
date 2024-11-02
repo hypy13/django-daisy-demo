@@ -2,5 +2,5 @@
 
 python manage.py migrate
 
-python loaddata dumpeddata.json
+python manage.py loaddata dumpeddata.json
 exec "$@"
