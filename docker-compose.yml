@@ -6,7 +6,8 @@ services:
     restart: unless-stopped
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.server
+
     command: python manage.py runserver 0.0.0.0:8000
     ports:
       - "4090:8000"
