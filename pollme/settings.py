@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+
     'social_django',
     'polls.apps.PollsConfig',
     'accounts.apps.AccountsConfig',
